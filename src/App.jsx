@@ -5,8 +5,10 @@ import Header from "./components/Header";
 function App() {
   return (
     <>
-      <Header/>
-      <Body/>
+      <div className="h-screen flex flex-col">   
+        <Header/>
+        <Body/>
+      </div>
     </>
   )
 }
