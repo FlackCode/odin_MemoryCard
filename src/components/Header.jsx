@@ -1,4 +1,4 @@
-export default function Header({ currentScore, currentBestScore }) {
+export default function Header({ score, bestScore }) {
     return(
         <div>
             <header className="p-2 bg-gray-100 shadow-md flex flex-row justify-between">
@@ -7,8 +7,8 @@ export default function Header({ currentScore, currentBestScore }) {
                     <p className="text-base font-semibold">Get points by clicking on an image, don't click on any more than once!</p>
                 </div>
                 <div className="px-4">
-                    <p>Score: {currentScore}</p>
-                    <p>Best Score: {currentBestScore}</p>
+                    <p>Score: {score}</p>
+                    <p>Best Score: {bestScore}</p>
                 </div>
             </header>
         </div>
