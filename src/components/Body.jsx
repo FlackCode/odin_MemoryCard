@@ -45,7 +45,6 @@ export default function Body({score, setScore, bestScore, setBestScore}) {
     function incrementScore() {
         setScore(score => score + 1)
         console.log(score)
-        
     }
     function handleClick(pokemonName) {
         if (clickedPokemon === pokemonName) {
@@ -56,12 +55,11 @@ export default function Body({score, setScore, bestScore, setBestScore}) {
             setClickedPokemon(pokemonName)
             incrementScore()
         }
-        
         const shuffledArray = shuffleArray(pokemonDisplay)
         setPokemonDisplay(shuffledArray)
     }
     return (
-        <div className="flex flex-1 p-8">
+        <div className="flex flex-1 p-8 flex-col items-center ">
             <div className="w-full flex flex-row justify-between h-full items-center">
                 {pokemonDisplay.map((pokemon, index) => (
                     <button key={index} className="bg-gray-200 w-1/6 h-2/5 flex flex-col justify-evenly items-center hover:cursor-pointer hover:bg-gray-300" onClick={() => handleClick(pokemon.name)}>
@@ -70,6 +68,7 @@ export default function Body({score, setScore, bestScore, setBestScore}) {
                     </button>
                 ))}
             </div>
+            {score === 5 && <p>Congrats, you won!</p>}
         </div>
     )
 }
